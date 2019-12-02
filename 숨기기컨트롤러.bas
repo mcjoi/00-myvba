@@ -8,7 +8,8 @@ Dim xlvallist(2) As String
 
 Dim txt As String
 
-    If MsgBox("A,B열의 행이 시트개수만큼 지워집니다." & vbCr & "계속하시려면 '예(Y)'를 클릭하세요.", vbYesNo + vbExclamation, "계속하실껀가요?") = vbYes Then
+    If MsgBox("A, B, C열이 지워집니다." & vbCr & "계속하시려면 '예(Y)'를 클릭하세요.", vbYesNo + vbExclamation, "계속하실껀가요?") = vbYes Then
+        Range("a:c").EntireColumn.Delete
         ActiveSheet.Range("a1").Activate
         For i = 1 To Worksheets.Count
             Cells(0 + i, 1) = Worksheets(i).Name
